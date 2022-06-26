@@ -1,0 +1,49 @@
+{
+  "name": "tpl-manager",
+  "version": "1.0.0",
+  "description": "cli专用，支持模板下载管理、缓存管理等操作",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "cross-env DEBUG=tpl-manager ts-node ./src/__test__/index.ts",
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z-juln/tpl-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/z-juln/tpl-manager/issues"
+  },
+  "homepage": "https://github.com/z-juln/tpl-manager#readme",
+  "dependencies": {
+    "debug": "^4.3.4",
+    "fetch-pkg": "^1.0.0",
+    "fs-extra": "^10.1.0",
+    "latest-version": "^7.0.0",
+    "merge-options": "^3.0.4",
+    "pkg-cache": "^0.1.4",
+    "rc": "^1.2.8",
+    "registry-url": "^6.0.1",
+    "update-notifier": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/boxen": "^3.0.1",
+    "@types/debug": "^4.1.7",
+    "@types/enzyme": "^3.10.11",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.4.0",
+    "@types/memory-fs": "^0.3.3",
+    "@types/rc": "^1.2.1",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/update-notifier": "^5.1.0",
+    "@umijs/fabric": "^2.12.0",
+    "cross-env": "^7.0.3",
+    "typescript": "^4.5.4"
+  }
+}
