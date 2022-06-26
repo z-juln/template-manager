@@ -1,4 +1,4 @@
-import { debug as createDebug } from 'debug';
+import createDebug from 'debug';
 
 const debug = createDebug('tpl-manager');
 

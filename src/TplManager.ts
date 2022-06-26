@@ -2,11 +2,14 @@ import debug from './utils/debug';
 import mergeOptions from './utils/mergeOptions';
 import install from './install';
 import fs from 'fs-extra';
+import { dirname } from 'desm';
 import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import type { InstallOptions } from './install';
 import type { NormalPkg, Options, OptPkg } from './type';
+
+const __dirname = dirname(import.meta.url);
 
 const defaultOptions: Options & { cacheDir: string; } = {
   cacheDir: path.resolve(os.homedir(), '.tpl-manager'),

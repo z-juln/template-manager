@@ -1,1 +1,4 @@
-export { default } from './TplManager';
+import TplManager from './TplManager';
+
+export default TplManager;
+export { Options, UpdateNotifierOpts } from './type';

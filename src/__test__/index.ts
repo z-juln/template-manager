@@ -1,4 +1,4 @@
-import TplManager from '../TplManager';
+import TplManager from '..';
 import fs from 'fs-extra';
 
 const assert = (a: any, b: any) => {
@@ -7,7 +7,7 @@ const assert = (a: any, b: any) => {
   }
 };
 
-async function testInstall() {
+export async function testInstall() {
   const pkgName = '@pkg-tpl/tsx-rollup-jest';
   const tplManager = new TplManager();
   await tplManager.install([pkgName], {
@@ -15,5 +15,7 @@ async function testInstall() {
   });
   
   const cachePath = tplManager.getCachePath(pkgName);
-  assert(fs.existsSync(cachePath), true)
+  assert(fs.existsSync(cachePath), true);
 }
+
+testInstall();
