@@ -7,9 +7,10 @@ const assert = (a: any, b: any) => {
   }
 };
 
+const pkgName = '@pkg-tpl/tsx-rollup-jest';
+const tplManager = new TplManager();
+
 export async function testInstall() {
-  const pkgName = '@pkg-tpl/tsx-rollup-jest';
-  const tplManager = new TplManager();
   await tplManager.install([pkgName], {
     registryURL: 'https://registry.npmmirror.com/',
   });
@@ -18,4 +19,16 @@ export async function testInstall() {
   assert(fs.existsSync(cachePath), true);
 }
 
+export async function caches() {
+  const caches = await tplManager.getCaches();
+  assert(caches.includes(pkgName), true);
+}
+
+export async function hasCache() {
+  const hasCache = await tplManager.hasCache(pkgName);
+  assert(hasCache, true);
+}
+
 testInstall();
+caches();
+hasCache();
